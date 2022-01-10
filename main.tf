@@ -38,22 +38,4 @@ resource "aws_sqs_queue" "sqs_queue" {
   # depends_on = []
 }
 
-resource "aws_sqs_queue_policy" "sqs_policy" {
-  queue_url = aws_sqs_queue.sqs_policy.id
 
-  policy = <<POLICY
-{
-  "Version": "2022-01-08",
-  "Id": "sqspolicy",
-  "Statement": [
-    {
-      "Sid": "First",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "SQS:*",
-      "Resource": "${aws_sqs_queue.sqs_queue.arn}"      
-    }
-  ]
-}
-POLICY
-}
