@@ -1,2 +1,2 @@
-# terraform-aws-glue
+# terraform-aws-sqs
 Modulo de terraform para aws glue
